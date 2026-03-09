@@ -202,65 +202,85 @@ app.get('/api/health', (req,res) => res.json({ ok:true, ts: new Date().toISOStri
 // ══════════════════════════════════════════════════════════════════════════════
 const CSS_BASE = `
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0D1B3E;--navy2:#162650;--blue:#0A84D6;--bluel:#3BA8F5;--bluebg:#EBF5FB;--green:#059669;--red:#EF4444;--orange:#F59E0B;--purple:#7C3AED;--teal:#0EA5E9;--slate:#64748B;--slatel:#94A3B8;--bg:#F4F7FA;--white:#fff;--text:#1E293B;--border:#E2E8F0}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text)}
-.hdr{background:var(--navy);color:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
-.hdr-brand{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--bluel)}
-.hdr-sub{font-size:12px;color:#9DB8D2;margin-left:14px;padding-left:14px;border-left:1px solid #2a4a7f}
-.hdr-nav a{color:#9DB8D2;text-decoration:none;font-size:12px;margin-left:16px}
-.hdr-nav a:hover{color:var(--bluel)}
-.hdr-user{font-size:12px;color:#9DB8D2}
+/* ── VEM Brand 2025 ─────────────────────────────────────────────── */
+:root{
+  --navy:#0d2645;--navy2:#0f1f3c;--navy3:#162b52;
+  --blue:#2563eb;--bluel:#60a5fa;--bluebg:#eff6ff;
+  --teal:#00c9b0;--pink:#e8196b;--orange:#f5851f;--purple:#7b2af7;
+  --green:#059669;--red:#ef4444;--slate:#64748b;--slatel:#94a3b8;
+  --bg:#f4f7fa;--white:#fff;--text:#1e293b;--border:#e2e8f0;
+  --galaxy:radial-gradient(ellipse at 15% 60%,rgba(232,25,107,.35) 0%,transparent 55%),
+           radial-gradient(ellipse at 55% 10%,rgba(0,201,176,.28) 0%,transparent 50%),
+           radial-gradient(ellipse at 85% 70%,rgba(245,133,31,.28) 0%,transparent 52%),
+           radial-gradient(ellipse at 40% 80%,rgba(123,42,247,.22) 0%,transparent 48%),
+           #0d2645;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Barlow','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text)}
+.hdr{background:var(--galaxy);color:#fff;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.4)}
+.hdr-logo{display:flex;align-items:center;gap:14px}
+.hdr-wordmark{font-family:'Barlow Condensed',Arial,sans-serif;font-weight:800;font-size:22px;letter-spacing:.04em;color:#fff;line-height:1}
+.hdr-tagline{font-family:'Barlow Condensed',Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:.18em;color:rgba(255,255,255,.5);text-transform:uppercase;line-height:1;margin-top:2px}
+.hdr-divider{width:1px;height:28px;background:rgba(255,255,255,.15)}
+.hdr-sub{font-size:12px;color:rgba(255,255,255,.6)}
+.hdr-nav{display:flex;align-items:center}
+.hdr-nav a{color:rgba(255,255,255,.65);text-decoration:none;font-size:12px;margin-left:16px;font-weight:500;transition:color .15s}
+.hdr-nav a:hover{color:#fff}
+.hdr-user{font-size:12px;color:rgba(255,255,255,.55)}
 .app{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
-.card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin-bottom:16px}
-.card-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:16px;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%)}
+.card-title{font-family:'Barlow Condensed',Arial,sans-serif;font-size:18px;font-weight:700;letter-spacing:.02em;color:var(--navy);margin-bottom:4px}
 .card-sub{font-size:13px;color:var(--slate);margin-bottom:14px}
-.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none}
-.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:#0970ba}
-.btn-secondary{background:#fff;border:1px solid var(--border);color:var(--text)}.btn-secondary:hover{background:var(--bg)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:7px;border:none;font-family:'Barlow',Arial,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .15s}
+.btn-primary{background:var(--navy);color:#fff}.btn-primary:hover{background:#0f3060;box-shadow:0 0 0 3px rgba(0,201,176,.2)}
+.btn-secondary{background:#fff;border:1.5px solid var(--border);color:var(--text)}.btn-secondary:hover{border-color:var(--navy);background:var(--bg)}
 .btn-green{background:var(--green);color:#fff}.btn-danger{background:var(--red);color:#fff}
 .btn-sm{padding:5px 11px;font-size:12px}
 table{width:100%;border-collapse:collapse;font-size:13px}
-th{background:var(--navy);color:#fff;padding:9px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.05em}
-td{padding:9px 12px;border-bottom:1px solid var(--border)}
-tr:hover td{background:#F8FAFC}
-.callout{background:var(--bluebg);border-left:3px solid var(--blue);padding:10px 14px;border-radius:0 6px 6px 0;font-size:13px;margin-bottom:14px}
-.callout.warn{background:#FEF3C7;border-color:var(--orange)}
-.callout.red{background:#FEE2E2;border-color:var(--red)}
+th{background:var(--navy);color:#fff;padding:10px 12px;text-align:left;font-family:'Barlow Condensed',Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+td{padding:10px 12px;border-bottom:1px solid var(--border)}
+tr:hover td{background:#f8fafc}
+.callout{background:#f0fdfa;border-left:3px solid var(--teal);padding:10px 14px;border-radius:0 6px 6px 0;font-size:13px;margin-bottom:14px}
+.callout.warn{background:#fff7e6;border-color:var(--orange)}
+.callout.red{background:#fee2e2;border-color:var(--red)}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:22px}
 .stat{background:#fff;border:1px solid var(--border);border-radius:9px;padding:14px 16px;text-align:center}
-.stat-n{font-size:28px;font-weight:800;color:var(--navy)}.stat-l{font-size:11px;color:var(--slate);margin-top:2px}
-.stat.c{border-top:3px solid var(--red)}.stat.a{border-top:3px solid var(--orange)}.stat.m{border-top:3px solid var(--blue)}
+.stat-n{font-family:'Barlow Condensed',Arial,sans-serif;font-size:30px;font-weight:800;color:var(--navy)}.stat-l{font-size:11px;color:var(--slate);margin-top:2px;font-weight:500}
+.stat.c{border-top:3px solid var(--red)}.stat.a{border-top:3px solid var(--orange)}.stat.m{border-top:3px solid var(--teal)}
 input,select,textarea{width:100%;padding:8px 10px;border:1.5px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit;background:#fff}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal)}
 label{font-size:12px;font-weight:600;color:var(--navy);display:block;margin-bottom:4px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px}
 .form-group{margin-bottom:12px}
 .err{color:var(--red);font-size:12px;margin-top:6px}
 .tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:20px}
-.tab{padding:10px 20px;font-size:13px;font-weight:600;color:var(--slate);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px}
-.tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+.tab{padding:10px 20px;font-family:'Barlow Condensed',Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:.02em;color:var(--slate);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .15s}
+.tab.active{color:var(--navy);border-bottom-color:var(--teal)}
 .tab-content{display:none}.tab-content.active{display:block}
-.qblock{background:#fff;border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:8px;padding:14px 16px;margin-bottom:12px}
+.qblock{background:#fff;border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:8px;padding:14px 16px;margin-bottom:12px}
 .q-text{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px}
 .q-meta{font-size:11px;color:var(--slate);margin-bottom:8px}
-.ans-si{background:#D1FAE5;color:#065F46}.ans-no{background:#FEE2E2;color:#991B1B}
-.ans-parz{background:#FEF3C7;color:#92400E}.ans-ns{background:#F1F5F9;color:#475569}.ans-na{background:#F1F5F9;color:#475569}
+.ans-si{background:#d1fae5;color:#065f46}.ans-no{background:#fee2e2;color:#991b1b}
+.ans-parz{background:#fef3c7;color:#92400e}.ans-ns{background:#f1f5f9;color:#475569}.ans-na{background:#f1f5f9;color:#475569}
 .ans-badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;display:inline-block}
 .vem-note-lbl{font-size:11px;font-weight:700;color:var(--green);margin-top:8px}
 textarea{min-height:70px;resize:vertical}
 .finding-row{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:var(--bg);border-radius:7px;margin-bottom:8px;border:1px solid var(--border)}
 .fr-title{font-size:13px;font-weight:600;color:var(--navy);flex:1}
 .fr-area{font-size:10px;font-weight:700;margin-bottom:3px}
-.owner-tag{font-size:10px;background:#E0E7FF;color:#3730A3;padding:1px 6px;border-radius:4px}
+.owner-tag{font-size:10px;background:#e0e7ff;color:#3730a3;padding:1px 6px;border-radius:4px}
 .rw-header{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:7px;cursor:pointer;margin-bottom:4px}
 .rw-body{display:none;padding:12px 14px;background:#fff;border:1px solid var(--border);border-radius:0 0 7px 7px;margin-bottom:8px}
 .rw-body.open{display:block}
 .out-section{margin-bottom:24px}
-.out-section h3{font-size:14px;font-weight:700;color:var(--navy);padding:10px 14px;background:var(--navy);color:#fff;border-radius:7px 7px 0 0;margin:0}
+.out-section h3{font-family:'Barlow Condensed',Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:.04em;padding:10px 14px;background:var(--navy);color:#fff;border-radius:7px 7px 0 0;margin:0}
 .roadmap-group{margin-bottom:16px}
 .roadmap-group h4{font-size:12px;font-weight:700;padding:7px 12px;border-radius:5px;margin-bottom:8px}
-.h4-qw{background:#FEE2E2;color:#991B1B}.h4-mt{background:#FEF3C7;color:#92400E}.h4-lt{background:#D1FAE5;color:#065F46}
+.h4-qw{background:#fee2e2;color:#991b1b}.h4-mt{background:#fef3c7;color:#92400e}.h4-lt{background:#d1fae5;color:#065f46}
 .ri{display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--bg);border-radius:6px;margin-bottom:5px}
 .ri-n{width:20px;height:20px;background:var(--navy);color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 @media print{.no-print{display:none!important}body{background:#fff}.hdr{display:none}}
@@ -269,7 +289,7 @@ textarea{min-height:70px;resize:vertical}
 // ── Setup page ─────────────────────────────────────────────────────────────────
 function pageSetup(err) {
   return `<!DOCTYPE html><html><head>${CSS_BASE}<title>VEM Setup</title></head><body>
-<div class="hdr"><div style="display:flex;align-items:center;gap:12px"><span class="hdr-brand">VEM SISTEMI</span><span class="hdr-sub">AI Security Assessment — Setup iniziale</span></div></div>
+<div class="hdr"><div class="hdr-logo"><div><div class="hdr-wordmark">VEM</div><div class="hdr-tagline">DRIVING DIGITAL</div></div><div class="hdr-divider"></div><span class="hdr-sub">AI Security Assessment — Setup iniziale</span></div></div>
 <div class="app" style="max-width:480px;margin:60px auto">
 <div class="card">
   <div class="card-title">Crea il primo account VEM</div>
@@ -287,11 +307,12 @@ function pageSetup(err) {
 // ── Login page ─────────────────────────────────────────────────────────────────
 function pageLogin(err, setup) {
   return `<!DOCTYPE html><html><head>${CSS_BASE}<title>VEM Login</title></head><body>
-<div class="hdr"><div style="display:flex;align-items:center;gap:12px"><span class="hdr-brand">VEM SISTEMI</span><span class="hdr-sub">AI Security Assessment</span></div></div>
+<div class="hdr"><div class="hdr-logo"><div><div class="hdr-wordmark">VEM</div><div class="hdr-tagline">DRIVING DIGITAL</div></div><div class="hdr-divider"></div><span class="hdr-sub">AI Security Assessment</span></div></div>
 <div class="app" style="max-width:420px;margin:80px auto">
 <div class="card">
-  <div style="text-align:center;margin-bottom:20px"><div style="font-size:36px;margin-bottom:8px">🔬</div>
-    <div class="card-title">Accesso VEM Analisti</div>
+  <div style="text-align:center;margin-bottom:20px">
+    <div style="display:inline-block;background:var(--galaxy);border-radius:50%;width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 12px">🔬</div>
+    <div class="card-title" style="font-size:22px">Accesso VEM Analisti</div>
     <div class="card-sub">Area riservata al team VEM Sistemi</div></div>
   ${setup?`<div class="callout" style="margin-bottom:14px">✅ Account creato. Accedi con le credenziali appena impostate.</div>`:''}
   ${err?`<div class="callout warn">${err}</div>`:''}
@@ -326,15 +347,16 @@ function pageDashboard(username, subs) {
 
   return `<!DOCTYPE html><html><head>${CSS_BASE}<title>VEM Dashboard</title></head><body>
 <div class="hdr">
-  <div style="display:flex;align-items:center;gap:12px">
-    <span class="hdr-brand">VEM SISTEMI</span>
+  <div class="hdr-logo">
+    <div><div class="hdr-wordmark">VEM</div><div class="hdr-tagline">DRIVING DIGITAL</div></div>
+    <div class="hdr-divider"></div>
     <span class="hdr-sub">AI Security Assessment — Dashboard</span>
   </div>
   <div class="hdr-nav" style="display:flex;align-items:center">
     <a href="/vem">Dashboard</a>
     <a href="/vem/users">Utenti</a>
     <span class="hdr-user" style="margin-left:16px">👤 ${username}</span>
-    <a href="/vem/logout" style="margin-left:16px;color:#EF4444">Esci</a>
+    <a href="/vem/logout" style="margin-left:16px;color:var(--pink)">Esci</a>
   </div>
 </div>
 <div class="app">
@@ -371,8 +393,8 @@ function pageUsers(username, users) {
     </td></tr>`).join('');
   return `<!DOCTYPE html><html><head>${CSS_BASE}<title>Utenti VEM</title></head><body>
 <div class="hdr">
-  <div style="display:flex;align-items:center;gap:12px"><span class="hdr-brand">VEM SISTEMI</span><span class="hdr-sub">Gestione utenti</span></div>
-  <div class="hdr-nav"><a href="/vem">← Dashboard</a><a href="/vem/logout" style="color:#EF4444">Esci</a></div>
+  <div class="hdr-logo"><div><div class="hdr-wordmark">VEM</div><div class="hdr-tagline">DRIVING DIGITAL</div></div><div class="hdr-divider"></div><span class="hdr-sub">Gestione utenti</span></div>
+  <div class="hdr-nav"><a href="/vem">← Dashboard</a><a href="/vem/logout" style="color:var(--pink)">Esci</a></div>
 </div>
 <div class="app" style="max-width:800px">
   <h1 style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:20px">Utenti VEM</h1>
@@ -501,19 +523,20 @@ function pageSubmission(username, sub) {
 </head><body>
 <div id="toast">✅ Salvato!</div>
 <div class="hdr">
-  <div style="display:flex;align-items:center;gap:12px">
-    <span class="hdr-brand">VEM SISTEMI</span>
+  <div class="hdr-logo">
+    <div><div class="hdr-wordmark">VEM</div><div class="hdr-tagline">DRIVING DIGITAL</div></div>
+    <div class="hdr-divider"></div>
     <span class="hdr-sub">Assessment: <strong style="color:#fff">${c.name||'—'}</strong></span>
     <span style="margin-left:8px">${statusBadge(sub.status)}</span>
   </div>
   <div class="hdr-nav" style="display:flex;align-items:center;gap:12px">
-    <select id="statusSel" style="padding:4px 8px;font-size:12px;border-radius:5px;border:1px solid #2a4a7f;background:#1a2f5a;color:#9DB8D2;cursor:pointer" onchange="setStatus(this.value)">
+    <select id="statusSel" style="padding:4px 8px;font-size:12px;border-radius:5px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);cursor:pointer;font-family:inherit" onchange="setStatus(this.value)">
       <option value="pending"   ${sub.status==='pending'?'selected':''}>In attesa</option>
       <option value="reviewed"  ${sub.status==='reviewed'?'selected':''}>In review</option>
       <option value="completed" ${sub.status==='completed'?'selected':''}>Completato</option>
     </select>
     <a href="/vem" class="btn btn-secondary btn-sm">← Dashboard</a>
-    <a href="/vem/logout" style="font-size:12px;color:#EF4444;text-decoration:none">Esci</a>
+    <a href="/vem/logout" style="font-size:12px;color:var(--pink);text-decoration:none">Esci</a>
   </div>
 </div>
 
