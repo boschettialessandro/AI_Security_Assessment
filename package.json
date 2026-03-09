@@ -1,0 +1,19 @@
+{
+  "name": "vem-ai-assessment",
+  "version": "1.0.0",
+  "description": "VEM Sistemi — AI Security Assessment Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "uuid": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
