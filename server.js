@@ -649,6 +649,7 @@ const RATING_MAP = {
   'Media+Critico':'ALTO','Media+Alto':'ALTO','Media+Medio':'MEDIO','Media+Basso':'BASSO',
   'Bassa+Critico':'MEDIO','Bassa+Alto':'MEDIO','Bassa+Medio':'BASSO','Bassa+Basso':'BASSO'
 };
+const RATING_ORDER = ${JSON.stringify(RATING_ORDER)};
 const AREAS_DATA = ${JSON.stringify(
   [
     {key:'shadowAI', label:'Shadow AI', color:'#7C3AED',
