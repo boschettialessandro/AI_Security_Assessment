@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VEM Sistemi — AI Security Assessment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* ── VEM Brand 2025 ─────────────────────────────────────────────── */
 :root{
@@ -21,17 +21,18 @@
             #0d2645;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Barlow','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body{font-family:'Syne','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 
 /* ── Header ────────────────────────────────────────────────────── */
 .hdr{background:var(--galaxy);color:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 2px 16px rgba(0,0,0,.4)}
-.hdr-logo{display:flex;align-items:center;gap:14px}
-.hdr-wordmark{font-family:'Barlow Condensed',Arial,sans-serif;font-weight:800;font-size:22px;letter-spacing:.04em;color:#fff;line-height:1}
-.hdr-tagline{font-family:'Barlow Condensed',Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:.18em;color:rgba(255,255,255,.55);text-transform:uppercase;line-height:1;margin-top:2px}
-.hdr-divider{width:1px;height:28px;background:rgba(255,255,255,.15);margin:0 2px}
-.hdr-title{font-family:'Barlow',Arial,sans-serif;font-size:12px;color:rgba(255,255,255,.6);letter-spacing:.03em}
+.hdr-logo{display:flex;align-items:center;gap:12px}
+.hdr-logo-img{height:34px;width:auto;flex-shrink:0}
+.hdr-logo-text{display:flex;flex-direction:column;justify-content:center}
+.hdr-wordmark{font-family:'Syne',Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.55);text-transform:uppercase;line-height:1}
+.hdr-divider{width:1px;height:30px;background:rgba(255,255,255,.15)}
+.hdr-title{font-family:'Syne',Arial,sans-serif;font-size:12px;color:rgba(255,255,255,.6);letter-spacing:.03em}
 .hdr-actions{display:flex;gap:8px}
-.hdr-btn{font-family:'Barlow',Arial,sans-serif;font-size:11px;padding:5px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);background:rgba(255,255,255,.06);cursor:pointer;transition:all .15s}
+.hdr-btn{font-family:'Syne',Arial,sans-serif;font-size:11px;padding:5px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);background:rgba(255,255,255,.06);cursor:pointer;transition:all .15s}
 .hdr-btn:hover{border-color:var(--teal);color:#fff;background:rgba(0,201,176,.15)}
 
 /* ── Progress ───────────────────────────────────────────────────── */
@@ -47,7 +48,7 @@ body{font-family:'Barlow','Segoe UI',Arial,sans-serif;background:var(--bg);color
 /* ── Cards ──────────────────────────────────────────────────────── */
 .card{background:#fff;border-radius:12px;border:1px solid var(--border);padding:24px 28px;margin-bottom:18px;
   clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%)}
-.card-title{font-family:'Barlow Condensed',Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:.02em;color:var(--navy);margin-bottom:5px}
+.card-title{font-family:'Syne',Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:.02em;color:var(--navy);margin-bottom:5px}
 .card-sub{font-size:13px;color:var(--slate);line-height:1.5;margin-bottom:18px}
 
 /* ── Phase header ───────────────────────────────────────────────── */
@@ -55,18 +56,18 @@ body{font-family:'Barlow','Segoe UI',Arial,sans-serif;background:var(--bg);color
   clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%)}
 .phase-num{border-radius:8px;width:50px;height:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
 .phase-num span:first-child{font-size:9px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.55)}
-.phase-num span:last-child{font-family:'Barlow Condensed',Arial,sans-serif;font-size:22px;font-weight:800;color:#fff;line-height:1}
-.phase-info h2{font-family:'Barlow Condensed',Arial,sans-serif;font-size:18px;font-weight:700;letter-spacing:.02em;color:#fff;margin-bottom:3px}
+.phase-num span:last-child{font-family:'Syne',Arial,sans-serif;font-size:22px;font-weight:800;color:#fff;line-height:1}
+.phase-info h2{font-family:'Syne',Arial,sans-serif;font-size:18px;font-weight:700;letter-spacing:.02em;color:#fff;margin-bottom:3px}
 .phase-info p{font-size:12px;color:rgba(255,255,255,.6)}
 
 /* ── Question blocks ────────────────────────────────────────────── */
 .qblock{background:var(--bg);border-radius:8px;padding:16px 18px;margin-bottom:14px;border-left:4px solid var(--teal)}
-.qblock .q-num{font-family:'Barlow Condensed',Arial,sans-serif;font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.qblock .q-num{font-family:'Syne',Arial,sans-serif;font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
 .qblock .q-text{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.4}
 .info-toggle{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--blue);cursor:pointer;margin-bottom:8px;background:none;border:none;padding:0;font-family:inherit}
 .info-box{background:#fff;border:1px solid var(--border);border-radius:7px;padding:14px 16px;margin-bottom:10px;display:none}
 .info-box.open{display:block}
-.info-box h4{font-family:'Barlow Condensed',Arial,sans-serif;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;letter-spacing:.02em}
+.info-box h4{font-family:'Syne',Arial,sans-serif;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;letter-spacing:.02em}
 .info-box p{font-size:12px;color:var(--slate);line-height:1.6;margin-bottom:8px}
 .info-box ul{padding-left:16px;font-size:12px;color:var(--slate);line-height:1.7}
 .info-box .ex{background:var(--bg);border-radius:5px;padding:8px 10px;font-size:11px;color:var(--text);margin-top:8px}
@@ -100,7 +101,7 @@ body{font-family:'Barlow','Segoe UI',Arial,sans-serif;background:var(--bg);color
 .callout.green{background:#f0fdf4;border-color:var(--green);color:#065f46}
 
 /* ── Buttons ────────────────────────────────────────────────────── */
-.btn{padding:9px 22px;border-radius:8px;font-family:'Barlow',Arial,sans-serif;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .15s;letter-spacing:.01em}
+.btn{padding:9px 22px;border-radius:8px;font-family:'Syne',Arial,sans-serif;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .15s;letter-spacing:.01em}
 .btn-primary{background:var(--navy);color:#fff} .btn-primary:hover{background:#0f3060;box-shadow:0 0 0 3px rgba(0,201,176,.25)}
 .btn-secondary{background:#fff;color:var(--navy);border:1.5px solid var(--border)} .btn-secondary:hover{border-color:var(--navy);color:var(--navy)}
 .btn-green{background:var(--green);color:#fff}
@@ -110,12 +111,12 @@ body{font-family:'Barlow','Segoe UI',Arial,sans-serif;background:var(--bg);color
 /* ── Stats ──────────────────────────────────────────────────────── */
 .stats-row{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
 .stat-box{flex:1;min-width:90px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:12px;text-align:center}
-.stat-box .sb-n{font-family:'Barlow Condensed',Arial,sans-serif;font-size:28px;font-weight:800;color:var(--navy)}
+.stat-box .sb-n{font-family:'Syne',Arial,sans-serif;font-size:28px;font-weight:800;color:var(--navy)}
 .stat-box .sb-l{font-size:11px;color:var(--slate);margin-top:1px;font-weight:500}
 
 /* ── Form fields ────────────────────────────────────────────────── */
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.sect-label{display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',Arial,sans-serif;font-size:12px;font-weight:700;color:var(--slate);text-transform:uppercase;letter-spacing:.1em;margin:16px 0 10px}
+.sect-label{display:flex;align-items:center;gap:8px;font-family:'Syne',Arial,sans-serif;font-size:12px;font-weight:700;color:var(--slate);text-transform:uppercase;letter-spacing:.1em;margin:16px 0 10px}
 .sect-label:after{content:'';flex:1;height:1px;background:var(--border)}
 
 /* ── Utilities ──────────────────────────────────────────────────── */
@@ -125,7 +126,7 @@ body{font-family:'Barlow','Segoe UI',Arial,sans-serif;background:var(--bg);color
 .modal-overlay{position:fixed;inset:0;background:rgba(13,38,69,.7);z-index:300;display:flex;align-items:center;justify-content:center;padding:20px}
 .modal{background:#fff;border-radius:12px;padding:24px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;
   clip-path:polygon(0 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%)}
-.modal h3{font-family:'Barlow Condensed',Arial,sans-serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:14px;letter-spacing:.02em}
+.modal h3{font-family:'Syne',Arial,sans-serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:14px;letter-spacing:.02em}
 .modal-footer{display:flex;gap:8px;justify-content:flex-end;margin-top:16px}
 .modal .field{margin-bottom:14px}
 .modal .field label{font-size:12px;font-weight:600;color:var(--navy);display:block;margin-bottom:4px}
@@ -135,14 +136,14 @@ body{font-family:'Barlow','Segoe UI',Arial,sans-serif;background:var(--bg);color
 /* ── Hero ───────────────────────────────────────────────────────── */
 .hero{background:var(--galaxy);border-radius:12px;padding:36px 32px;color:#fff;text-align:center;margin-bottom:20px;
   clip-path:polygon(0 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%)}
-.hero h1{font-family:'Barlow Condensed',Arial,sans-serif;font-size:30px;font-weight:800;letter-spacing:.03em;margin-bottom:8px}
+.hero h1{font-family:'Syne',Arial,sans-serif;font-size:30px;font-weight:800;letter-spacing:.03em;margin-bottom:8px}
 .hero p{font-size:14px;color:rgba(255,255,255,.7);max-width:520px;margin:0 auto 20px;line-height:1.65}
 .hero-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:11px;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.8);text-transform:uppercase;margin-bottom:14px}
 
 /* ── Success ────────────────────────────────────────────────────── */
 .success-page{text-align:center;padding:60px 20px;max-width:560px;margin:0 auto}
 .success-icon{font-size:64px;margin-bottom:16px}
-.success-title{font-family:'Barlow Condensed',Arial,sans-serif;font-size:28px;font-weight:800;letter-spacing:.02em;color:var(--navy);margin-bottom:8px}
+.success-title{font-family:'Syne',Arial,sans-serif;font-size:28px;font-weight:800;letter-spacing:.02em;color:var(--navy);margin-bottom:8px}
 .success-sub{font-size:14px;color:var(--slate);line-height:1.6;margin-bottom:24px}
 </style>
 </head>
@@ -150,9 +151,9 @@ body{font-family:'Barlow','Segoe UI',Arial,sans-serif;background:var(--bg);color
 
 <div class="hdr">
   <div class="hdr-logo">
-    <div>
-      <div class="hdr-wordmark">VEM</div>
-      <div class="hdr-tagline">DRIVING DIGITAL</div>
+    <img src="/VEM_RGB-NEGATIVO.png" height="34" alt="VEM" class="hdr-logo-img">
+    <div class="hdr-logo-text">
+      <div class="hdr-wordmark">DRIVING DIGITAL</div>
     </div>
     <div class="hdr-divider"></div>
     <span class="hdr-title">AI Security Assessment</span>
@@ -327,7 +328,7 @@ function renderIntro() {
   <div class="card">
     <div class="card-title">Come funziona</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:14px">
-      ${[['📋','Dati aziendali','Informazioni di contatto e referenti'],['🤖','Inventario AI','Censimento dei sistemi AI in uso'],['❓','Questionario','34 domande su 6 aree di rischio'],['📤','Invio','Le risposte vengono inviate al team VEM']].map(([i,t,d])=>`<div style="text-align:center;padding:14px;background:var(--bg);border-radius:8px;border-top:3px solid var(--teal)"><div style="font-size:26px;margin-bottom:6px">${i}</div><div style="font-family:'Barlow Condensed',Arial,sans-serif;font-size:14px;font-weight:700;color:var(--navy)">${t}</div><div style="font-size:11px;color:var(--slate);margin-top:3px">${d}</div></div>`).join('')}
+      ${[['📋','Dati aziendali','Informazioni di contatto e referenti'],['🤖','Inventario AI','Censimento dei sistemi AI in uso'],['❓','Questionario','34 domande su 6 aree di rischio'],['📤','Invio','Le risposte vengono inviate al team VEM']].map(([i,t,d])=>`<div style="text-align:center;padding:14px;background:var(--bg);border-radius:8px;border-top:3px solid var(--teal)"><div style="font-size:26px;margin-bottom:6px">${i}</div><div style="font-family:'Syne',Arial,sans-serif;font-size:14px;font-weight:700;color:var(--navy)">${t}</div><div style="font-size:11px;color:var(--slate);margin-top:3px">${d}</div></div>`).join('')}
     </div>
     <div class="callout warn" style="margin-top:16px">⚠ Alcune domande richiedono informazioni tecniche. Se non le ha, risponda "Non so" o "Parziale" e aggiunga una nota — il team VEM la supporterà durante l'analisi.</div>
   </div>
@@ -512,8 +513,8 @@ function renderSuccess() {
     <div class="success-title">Questionario inviato!</div>
     <div class="success-sub">Le risposte sono state inviate correttamente al team VEM Sistemi.<br>Verrete contattati entro 2-3 giorni lavorativi per la presentazione dei risultati.</div>
     <div style="background:var(--galaxy);border-radius:10px;padding:20px;color:#fff;margin-bottom:24px;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%)">
-      <div style="font-family:'Barlow Condensed',Arial,sans-serif;font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.55);margin-bottom:4px">AZIENDA</div>
-      <div style="font-family:'Barlow Condensed',Arial,sans-serif;font-size:22px;font-weight:800;letter-spacing:.02em">${S.company.name||'—'}</div>
+      <div style="font-family:'Syne',Arial,sans-serif;font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.55);margin-bottom:4px">AZIENDA</div>
+      <div style="font-family:'Syne',Arial,sans-serif;font-size:22px;font-weight:800;letter-spacing:.02em">${S.company.name||'—'}</div>
       <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px">${new Date().toLocaleDateString('it-IT',{year:'numeric',month:'long',day:'numeric'})}</div>
     </div>
     <div style="font-size:13px;color:var(--slate)">Per informazioni: <a href="mailto:info@vem.com" style="color:var(--blue)">info@vem.com</a></div>
